@@ -3,12 +3,25 @@ import { Card , Button,Icon,Table,Modal } from 'antd';
 import LinkButton from '../../component/linkButton/index'
 import AddEditForm from './addEdit'
 export default class CateGory extends Component{
-   
-     formRef = React.createRef()
+  
+    //  formRef = React.createRef()
     //定义变量不能带关键字的
    state = {
     visible:false,
+    form:{
+        id:9,
+        categroyName:'水果',
+        parentId:0,
+        }
    }
+   getformData=()=>{
+    // console.log(event.target.value)
+    //   this.form = {
+    //     id:9,
+    //     categroyName:'水果',
+    //     parentId:0,
+    // }
+   } 
    //定义函数的区域
     bindEdit = (category) =>{
         // console.log('222',this)
@@ -20,11 +33,11 @@ export default class CateGory extends Component{
         // console.log('9098',this.formRef)
         // this.state.visible = true
         //获取到当前的详情，用于传给子组件
-        this.form = {
-            id:9,
-            categroyName:'水果',
-            parentId:0,
-        }
+        // this.form = {
+        //     id:9,
+        //     categroyName:'水果',
+        //     parentId:0,
+        // }
     }
     handleOk = () =>{
         this.setState({
@@ -41,10 +54,18 @@ export default class CateGory extends Component{
     }
     render(){
     //定义变量的区域
-    // const data = this.state
+     const data = this.state
+     console.log(data)
     // console.log(this.props)
     //  const { getFieldDecorator } = this.props.form;
-    console.log(this.form)
+    //  console.log(this.form)
+    // const {categroyName} = form
+    // console.log(this.props)
+    // const form = { 
+    //          id:9,
+    //         categroyName:'水果',
+    //         parentId:0,
+    // }
     const title = '一级分类列表'
     const extra = (
         <Button type="primary">
@@ -94,7 +115,6 @@ export default class CateGory extends Component{
         //     key:'address'
         // },
     ]
-   
         return(
             <div>
                 <Card title={title} extra={extra}>
@@ -105,9 +125,10 @@ export default class CateGory extends Component{
                 visible={this.state.visible}
                 onOk={this.handleOk}
                 onCancel={this.handleCancel}
+              
                 > 
                 {/* ref={this.formRef} */}
-                <AddEditForm categoryName={''}></AddEditForm>
+                <AddEditForm categroyName={data.form.categroyName}></AddEditForm>
                 {/* <Form onSubmit={this.handleSubmit} className="login-form">
                 <Form.Item>
                   {getFieldDecorator('categoryName', {
