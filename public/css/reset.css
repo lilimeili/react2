@@ -1,0 +1,9 @@
+/* 背景图的宽高要继承html,body,root,初始化的数据写入到reset.css,这个文件引入到html中 */
+html,body{
+   width:100%;
+   height:100%;
+}
+#root{
+    width:100%;
+    height:100%;
+}

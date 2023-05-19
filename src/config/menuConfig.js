@@ -1,0 +1,42 @@
+const menuList = [
+ {
+    title:'首页',
+    key:'/home',
+    icon:'home',
+ },
+ {
+    title:'商品',
+    key:'/products',
+    icon:'appstore',
+    children:[
+        {
+            title:'商品分类',
+            key:'/cateGory',
+            icon:'category'
+        },
+        {
+            title:'商品管理',
+            key:'/product',
+            icon:'product'
+        },
+    ]
+ },
+ {
+    title:'图表管理',
+    key:'/echarts',
+    icon:'appstore',
+    children:[
+        {
+            title:'折线图管理',
+            key:'/bars',
+            icon:'bars'
+        },
+        {
+            title:'饼状图管理',
+            key:'/cirle',
+            icon:'cirle'
+        },
+    ]
+ },
+]
+export default menuList
